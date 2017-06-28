@@ -388,6 +388,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZyJ-Bp-06B" id="NR8-SU-FJY"/>
+                                    <outlet property="delegate" destination="ZyJ-Bp-06B" id="ZE1-SV-tKm"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
