@@ -1,5 +1,7 @@
+import Foundation
+import RealmSwift
 
-
-class ExpenseDTO {
-    
+class ExpenseDTO : Object {
+    dynamic var value = 0
+    dynamic var desc = ""
 }

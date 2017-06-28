@@ -1,6 +1,7 @@
+import Foundation
+import RealmSwift
 
-
-class CategoryDTO {
-    
+class CategoryDTO : Object {
+    dynamic var name = ""
+    dynamic var image = ""
 }
-
