@@ -319,6 +319,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Expenses" id="kCk-hz-Lc1"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="ncS-lJ-JFZ" id="gJE-Cx-yYp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XEL-Fb-40o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -356,7 +359,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r2l-Gv-OJt" id="cPU-DV-k8s">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MhT-y3-sbo">
@@ -407,6 +410,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Categories" id="o6a-Xr-fgs"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="YgR-bC-V2K" id="BKG-W0-YXO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="auA-rA-DZM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

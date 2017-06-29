@@ -1,4 +1,5 @@
 import UIKit
+import RealmSwift
 
 class NewExpenseViewController: UIViewController {
     
@@ -12,20 +13,22 @@ class NewExpenseViewController: UIViewController {
     @IBOutlet weak var categoryInput: UITextField!
     @IBOutlet weak var accountInput: UITextField!
     
-    
+    var realm : Realm!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        valueImage.image = UIImage(named: "food_icon") //expensesTable[indexPath.row].category.image
+        self.realm = try! Realm()
         
-        descriptionImage.image = UIImage(named: "food_icon") //expensesTable[indexPath.row].category.image
+        self.valueImage.image = UIImage(named: "food_icon") //expensesTable[indexPath.row].category.image
         
-        categoryImage.image = UIImage(named: "food_icon") //expensesTable[indexPath.row].category.image
+        self.descriptionImage.image = UIImage(named: "food_icon") //expensesTable[indexPath.row].category.image
         
-        accountImage.image = UIImage(named: "food_icon") //expensesTable[indexPath.row].category.image
+        self.categoryImage.image = UIImage(named: "food_icon") //expensesTable[indexPath.row].category.image
+        
+        self.accountImage.image = UIImage(named: "food_icon") //expensesTable[indexPath.row].category.image
 
         
         
@@ -36,7 +39,16 @@ class NewExpenseViewController: UIViewController {
     }
     
     @IBAction func saveAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        if (Int(self.valueInput.text!) != nil) {
+            let myExpense = ExpenseDTO()
+            myExpense.value = Int(self.valueInput.text!)!
+            myExpense.desc = self.descriptionInput.text!
+            try! realm.write {
+                realm.add(myExpense)
+            }
+        
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     
