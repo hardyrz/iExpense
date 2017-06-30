@@ -14,7 +14,7 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var accountInput: UITextField!
     
     var realm : Realm!
-    
+    var categoriesList : Results<CategoryDTO>!
     var categoryPicker = UIPickerView()
     
     override func viewDidLoad() {
@@ -22,6 +22,7 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
         // Do any additional setup after loading the view, typically from a nib.
         
         self.realm = try! Realm()
+        self.categoriesList = realm.objects(CategoryDTO.self)
         
         self.valueImage.image = UIImage(named: "food_icon") //expensesTable[indexPath.row].category.image
         
@@ -34,7 +35,6 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
         categoryPicker.dataSource = self
         categoryPicker.delegate = self
         self.categoryInput.inputView = categoryPicker
-        
     }
     
     @IBAction func cancelAction(_ sender: Any) {
@@ -55,7 +55,7 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 10
+        return self.categoriesList.count
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -63,12 +63,12 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "AAAA"
+        return categoriesList.elements[row].name
         
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.categoryInput.text = "AAA"
+        self.categoryInput.text = categoriesList.elements[row].name
         self.view.endEditing(false)
     }
 }
