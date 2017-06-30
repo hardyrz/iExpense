@@ -1,7 +1,7 @@
 import UIKit
 import RealmSwift
 
-class NewExpenseViewController: UIViewController {
+class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var valueImage: UIImageView!
     @IBOutlet weak var descriptionImage: UIImageView!
@@ -10,7 +10,7 @@ class NewExpenseViewController: UIViewController {
     
     @IBOutlet weak var valueInput: UITextField!
     @IBOutlet weak var descriptionInput: UITextField!
-    @IBOutlet weak var categoryInput: UITextField!
+    @IBOutlet weak var categoryInput: UIPickerView!
     @IBOutlet weak var accountInput: UITextField!
     
     var realm : Realm!
@@ -51,5 +51,22 @@ class NewExpenseViewController: UIViewController {
         }
     }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 3
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "AAAA"
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        
+    }
     
 }

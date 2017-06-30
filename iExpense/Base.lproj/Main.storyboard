@@ -111,6 +111,9 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ifi-rg-LQf">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="8jo-JN-PKz"/>
+                                                </constraints>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gBd-gv-xc6">
                                                 <rect key="frame" x="60" y="0.0" width="283" height="60"/>
@@ -134,6 +137,9 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lih-CC-oWN">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="IHy-eO-06x"/>
+                                                </constraints>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NIO-13-kJ1">
                                                 <rect key="frame" x="60" y="0.0" width="283" height="60"/>
@@ -156,21 +162,26 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8N8-yu-LOt">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="nXY-sE-srY"/>
+                                                </constraints>
                                             </imageView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QVG-4D-7Cr">
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGd-NW-1jW">
                                                 <rect key="frame" x="60" y="0.0" width="283" height="60"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="nsf-tZ-rMD" id="klS-pb-aeg"/>
+                                                    <outlet property="delegate" destination="nsf-tZ-rMD" id="u5u-0h-nxy"/>
+                                                </connections>
+                                            </pickerView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="GGd-NW-1jW" secondAttribute="trailing" id="5GV-2M-6gI"/>
                                             <constraint firstAttribute="bottom" secondItem="8N8-yu-LOt" secondAttribute="bottom" id="65u-vD-iHD"/>
                                             <constraint firstItem="8N8-yu-LOt" firstAttribute="top" secondItem="EdQ-GX-cx6" secondAttribute="top" id="7WV-9t-M9l"/>
                                             <constraint firstItem="8N8-yu-LOt" firstAttribute="leading" secondItem="EdQ-GX-cx6" secondAttribute="leading" id="GIR-K9-TDj"/>
-                                            <constraint firstAttribute="bottom" secondItem="QVG-4D-7Cr" secondAttribute="bottom" id="RiN-Af-hG4"/>
-                                            <constraint firstAttribute="trailing" secondItem="QVG-4D-7Cr" secondAttribute="trailing" id="Rlf-1A-FIo"/>
-                                            <constraint firstItem="QVG-4D-7Cr" firstAttribute="top" secondItem="EdQ-GX-cx6" secondAttribute="top" id="SBG-gj-Qga"/>
+                                            <constraint firstItem="GGd-NW-1jW" firstAttribute="leading" secondItem="8N8-yu-LOt" secondAttribute="trailing" id="QZ6-wt-IWq"/>
+                                            <constraint firstItem="GGd-NW-1jW" firstAttribute="top" secondItem="EdQ-GX-cx6" secondAttribute="top" id="WFE-mn-ULo"/>
+                                            <constraint firstAttribute="bottom" secondItem="GGd-NW-1jW" secondAttribute="bottom" id="sH5-Se-VoG"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mR4-BZ-3P0">
@@ -178,6 +189,9 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t5I-O0-fV1">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="hgf-W6-TQe"/>
+                                                </constraints>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Account" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NDY-gc-N57">
                                                 <rect key="frame" x="60" y="0.0" width="283" height="60"/>
@@ -216,7 +230,7 @@
                         <outlet property="accountImage" destination="t5I-O0-fV1" id="0MC-8f-aAy"/>
                         <outlet property="accountInput" destination="NDY-gc-N57" id="FDm-Ed-eHQ"/>
                         <outlet property="categoryImage" destination="8N8-yu-LOt" id="PWb-rj-wTb"/>
-                        <outlet property="categoryInput" destination="QVG-4D-7Cr" id="w3W-uP-6xz"/>
+                        <outlet property="categoryInput" destination="GGd-NW-1jW" id="ob0-cY-Ban"/>
                         <outlet property="descriptionImage" destination="lih-CC-oWN" id="dad-ux-t3O"/>
                         <outlet property="descriptionInput" destination="NIO-13-kJ1" id="O42-KR-cqT"/>
                         <outlet property="valueImage" destination="Ifi-rg-LQf" id="Ywu-tk-Ba7"/>
