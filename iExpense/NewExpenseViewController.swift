@@ -15,6 +15,7 @@ class NewExpenseViewController: UIViewController {
     
     var realm : Realm!
     
+    var categoryPicker = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class NewExpenseViewController: UIViewController {
         
         self.accountImage.image = UIImage(named: "food_icon") //expensesTable[indexPath.row].category.image
 
-        
+        createCategoryPicker()
         
     }
     
@@ -51,5 +52,18 @@ class NewExpenseViewController: UIViewController {
         }
     }
     
+    func createCategoryPicker() {
+        let categoryToolbar = UIToolbar()
+        categoryToolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        categoryToolbar.setItems([doneButton], animated: false)
+        self.categoryInput.inputView = categoryPicker
+        
+    }
+    
+    func donePressed() {
+        self.categoryInput.text = "\(categoryPicker.description)"
+    }
     
 }
