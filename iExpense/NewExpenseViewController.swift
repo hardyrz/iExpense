@@ -10,11 +10,12 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     @IBOutlet weak var valueInput: UITextField!
     @IBOutlet weak var descriptionInput: UITextField!
-    @IBOutlet weak var categoryInput: UIPickerView!
+    @IBOutlet weak var categoryInput: UITextField!
     @IBOutlet weak var accountInput: UITextField!
     
     var realm : Realm!
     
+    var categoryPicker = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,9 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
         
         self.accountImage.image = UIImage(named: "food_icon") //expensesTable[indexPath.row].category.image
 
-        
+        categoryPicker.dataSource = self
+        categoryPicker.delegate = self
+        self.categoryInput.inputView = categoryPicker
         
     }
     
@@ -52,7 +55,7 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 3
+        return 10
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -65,8 +68,7 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        
+        self.categoryInput.text = "AAA"
+        self.view.endEditing(false)
     }
-    
 }

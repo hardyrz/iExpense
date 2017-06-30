@@ -166,22 +166,20 @@
                                                     <constraint firstAttribute="width" constant="60" id="nXY-sE-srY"/>
                                                 </constraints>
                                             </imageView>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGd-NW-1jW">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VOl-kA-Y2Q">
                                                 <rect key="frame" x="60" y="0.0" width="283" height="60"/>
-                                                <connections>
-                                                    <outlet property="dataSource" destination="nsf-tZ-rMD" id="klS-pb-aeg"/>
-                                                    <outlet property="delegate" destination="nsf-tZ-rMD" id="u5u-0h-nxy"/>
-                                                </connections>
-                                            </pickerView>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="GGd-NW-1jW" secondAttribute="trailing" id="5GV-2M-6gI"/>
+                                            <constraint firstItem="VOl-kA-Y2Q" firstAttribute="top" secondItem="EdQ-GX-cx6" secondAttribute="top" id="1on-Sg-3nt"/>
                                             <constraint firstAttribute="bottom" secondItem="8N8-yu-LOt" secondAttribute="bottom" id="65u-vD-iHD"/>
                                             <constraint firstItem="8N8-yu-LOt" firstAttribute="top" secondItem="EdQ-GX-cx6" secondAttribute="top" id="7WV-9t-M9l"/>
                                             <constraint firstItem="8N8-yu-LOt" firstAttribute="leading" secondItem="EdQ-GX-cx6" secondAttribute="leading" id="GIR-K9-TDj"/>
-                                            <constraint firstItem="GGd-NW-1jW" firstAttribute="leading" secondItem="8N8-yu-LOt" secondAttribute="trailing" id="QZ6-wt-IWq"/>
-                                            <constraint firstItem="GGd-NW-1jW" firstAttribute="top" secondItem="EdQ-GX-cx6" secondAttribute="top" id="WFE-mn-ULo"/>
-                                            <constraint firstAttribute="bottom" secondItem="GGd-NW-1jW" secondAttribute="bottom" id="sH5-Se-VoG"/>
+                                            <constraint firstAttribute="bottom" secondItem="VOl-kA-Y2Q" secondAttribute="bottom" id="XUo-z3-Ud8"/>
+                                            <constraint firstAttribute="trailing" secondItem="VOl-kA-Y2Q" secondAttribute="trailing" id="juE-SM-SK7"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mR4-BZ-3P0">
@@ -230,7 +228,7 @@
                         <outlet property="accountImage" destination="t5I-O0-fV1" id="0MC-8f-aAy"/>
                         <outlet property="accountInput" destination="NDY-gc-N57" id="FDm-Ed-eHQ"/>
                         <outlet property="categoryImage" destination="8N8-yu-LOt" id="PWb-rj-wTb"/>
-                        <outlet property="categoryInput" destination="GGd-NW-1jW" id="ob0-cY-Ban"/>
+                        <outlet property="categoryInput" destination="VOl-kA-Y2Q" id="qjD-nE-SVp"/>
                         <outlet property="descriptionImage" destination="lih-CC-oWN" id="dad-ux-t3O"/>
                         <outlet property="descriptionInput" destination="NIO-13-kJ1" id="O42-KR-cqT"/>
                         <outlet property="valueImage" destination="Ifi-rg-LQf" id="Ywu-tk-Ba7"/>
