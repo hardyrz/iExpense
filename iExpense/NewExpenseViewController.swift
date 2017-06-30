@@ -16,6 +16,7 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var realm : Realm!
     var categoriesList : Results<CategoryDTO>!
     var categoryPicker = UIPickerView()
+    var selectedCategory : CategoryDTO?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +43,12 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     @IBAction func saveAction(_ sender: Any) {
-        if (Int(self.valueInput.text!) != nil) {
+        if (Int(self.valueInput.text!) != nil && self.selectedCategory != nil) {
             let myExpense = ExpenseDTO()
             myExpense.value = Int(self.valueInput.text!)!
             myExpense.desc = self.descriptionInput.text!
+            myExpense.category = self.selectedCategory
+            
             try! realm.write {
                 realm.add(myExpense)
             }
@@ -69,6 +72,7 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.categoryInput.text = categoriesList.elements[row].name
+        self.selectedCategory = categoriesList.elements[row]
         self.view.endEditing(false)
     }
 }
