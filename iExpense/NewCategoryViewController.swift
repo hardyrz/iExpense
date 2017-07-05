@@ -14,7 +14,7 @@ class NewCategoryViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.realm = try! Realm()
         
-        nameImage.image = UIImage(named: "food_icon") //expensesTable[indexPath.row].category.image
+        nameImage.image = UIImage(named: "category_icon")
     }
     
     @IBAction func saveAction(_ sender: Any) {

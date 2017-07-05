@@ -30,13 +30,13 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
         self.categoriesList = realm.objects(CategoryDTO.self)
         self.accountsList = realm.objects(AccountDTO.self)
         
-        self.valueImage.image = UIImage(named: "food_icon") //expensesTable[indexPath.row].category.image
+        self.valueImage.image = UIImage(named: "value_icon")
         
-        self.descriptionImage.image = UIImage(named: "food_icon") //expensesTable[indexPath.row].category.image
+        self.descriptionImage.image = UIImage(named: "description_icon")
         
-        self.categoryImage.image = UIImage(named: "food_icon") //expensesTable[indexPath.row].category.image
+        self.categoryImage.image = UIImage(named: "category_icon")
         
-        self.accountImage.image = UIImage(named: "food_icon") //expensesTable[indexPath.row].category.image
+        self.accountImage.image = UIImage(named: "account_icon")
 
         categoryPicker.dataSource = self
         categoryPicker.delegate = self
