@@ -9,7 +9,6 @@ class NewAccountViewController: UIViewController {
     var realm : Realm!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -30,8 +29,6 @@ class NewAccountViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
         }
     }
-
-
 
     @IBAction func cancelAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
