@@ -12,6 +12,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
         // Do any additional setup after loading the view, typically from a nib.
         let config = Realm.Configuration(schemaVersion: try! schemaVersionAtURL(Realm.Configuration.defaultConfiguration.fileURL!) + 1)
         Realm.Configuration.defaultConfiguration = config
+        
         self.realm = try! Realm()
         self.expensesTable = self.realm.objects(ExpenseDTO.self)
     }
@@ -27,9 +28,6 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //if let table = self.expensesTable {
-        //    return table.count
-        //}
         return (self.expensesTable?.count)!
     }
     
@@ -38,7 +36,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
         
         cell.DescriptionLabel.text = self.expensesTable?[indexPath.row].desc
         cell.ValueLabel.text = "USD " + String(Int((self.expensesTable?[indexPath.row].value)!))
-        cell.CategoryImage.image = UIImage(named: "food_icon") //expensesTable[indexPath.row].category.image
+        cell.CategoryImage.image = UIImage(named: (expensesTable?[indexPath.row].category?.image)!)
         
         return cell
     }

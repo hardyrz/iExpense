@@ -61,7 +61,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GtT-TN-w7d" id="Wbz-Rl-QIu">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Uw-VT-0eY">
@@ -427,7 +427,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="03s-69-ame" id="1Kh-OB-WqB">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zfv-UP-PM5">
@@ -527,7 +527,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r2l-Gv-OJt" id="cPU-DV-k8s">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MhT-y3-sbo">
@@ -621,8 +621,8 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WjY-jW-mR0">
-                                <rect key="frame" x="0.0" y="86" width="375" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WjY-jW-mR0">
+                                <rect key="frame" x="0.0" y="86" width="375" height="260"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JW8-vt-Gxc">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
@@ -638,12 +638,28 @@
                                             </textField>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="D59-er-ovs"/>
                                             <constraint firstAttribute="bottom" secondItem="0i7-Lr-sEX" secondAttribute="bottom" id="EbH-Su-T0X"/>
                                             <constraint firstItem="0i7-Lr-sEX" firstAttribute="top" secondItem="JW8-vt-Gxc" secondAttribute="top" id="Ifd-DS-oHT"/>
                                             <constraint firstAttribute="trailing" secondItem="0i7-Lr-sEX" secondAttribute="trailing" id="SaK-SS-HMy"/>
                                             <constraint firstItem="rDj-8j-6dV" firstAttribute="top" secondItem="JW8-vt-Gxc" secondAttribute="top" id="Vbe-97-1mv"/>
                                             <constraint firstAttribute="bottom" secondItem="rDj-8j-6dV" secondAttribute="bottom" id="xVZ-eE-tos"/>
                                             <constraint firstItem="rDj-8j-6dV" firstAttribute="leading" secondItem="JW8-vt-Gxc" secondAttribute="leading" id="yNA-JE-xbF"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mCw-gj-ere">
+                                        <rect key="frame" x="0.0" y="60" width="375" height="200"/>
+                                        <subviews>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lya-s7-Phz">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            </pickerView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="5Wm-6v-Beh"/>
+                                            <constraint firstItem="lya-s7-Phz" firstAttribute="leading" secondItem="mCw-gj-ere" secondAttribute="leading" id="LdU-fp-uYm"/>
+                                            <constraint firstAttribute="bottom" secondItem="lya-s7-Phz" secondAttribute="bottom" id="TMv-Lu-Kfo"/>
+                                            <constraint firstAttribute="trailing" secondItem="lya-s7-Phz" secondAttribute="trailing" id="Uwx-UR-SUH"/>
+                                            <constraint firstItem="lya-s7-Phz" firstAttribute="top" secondItem="mCw-gj-ere" secondAttribute="top" id="ugI-20-aa0"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -663,6 +679,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="categoryInput" destination="mCw-gj-ere" id="tdv-Cx-pgM"/>
                         <outlet property="nameImage" destination="rDj-8j-6dV" id="vBE-yf-wta"/>
                         <outlet property="nameInput" destination="0i7-Lr-sEX" id="Y5i-P0-8E1"/>
                     </connections>
