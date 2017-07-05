@@ -18,12 +18,17 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var categoryPicker = UIPickerView()
     var selectedCategory : CategoryDTO?
     
+    var accountsList : Results<AccountDTO>!
+    var accountPicker = UIPickerView()
+    var selectedAccount : AccountDTO?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         self.realm = try! Realm()
         self.categoriesList = realm.objects(CategoryDTO.self)
+        self.accountsList = realm.objects(AccountDTO.self)
         
         self.valueImage.image = UIImage(named: "food_icon") //expensesTable[indexPath.row].category.image
         
@@ -36,6 +41,10 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
         categoryPicker.dataSource = self
         categoryPicker.delegate = self
         self.categoryInput.inputView = categoryPicker
+        
+        accountPicker.dataSource = self
+        accountPicker.delegate = self
+        self.accountInput.inputView = accountPicker
     }
     
     @IBAction func cancelAction(_ sender: Any) {
@@ -48,6 +57,7 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
             myExpense.value = Int(self.valueInput.text!)!
             myExpense.desc = self.descriptionInput.text!
             myExpense.category = self.selectedCategory
+            myExpense.account = self.selectedAccount
             
             try! realm.write {
                 realm.add(myExpense)
@@ -58,7 +68,11 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.categoriesList.count
+        if (pickerView == self.categoryPicker) {
+            return self.categoriesList.count
+        } else {
+            return self.accountsList.count
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -66,13 +80,22 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return categoriesList.elements[row].name
+        if (pickerView == self.categoryPicker) {
+            return categoriesList.elements[row].name
+        } else {
+            return accountsList.elements[row].name
+        }
         
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.categoryInput.text = categoriesList.elements[row].name
-        self.selectedCategory = categoriesList.elements[row]
+        if (pickerView == self.categoryPicker) {
+            self.categoryInput.text = categoriesList.elements[row].name
+            self.selectedCategory = categoriesList.elements[row]
+        } else {
+            self.accountInput.text = accountsList.elements[row].name
+            self.selectedAccount = accountsList.elements[row]
+        }
         self.view.endEditing(false)
     }
 }

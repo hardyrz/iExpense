@@ -10,7 +10,8 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        let config = Realm.Configuration(schemaVersion: try! schemaVersionAtURL(Realm.Configuration.defaultConfiguration.fileURL!) + 1)
+        Realm.Configuration.defaultConfiguration = config
         self.realm = try! Realm()
         self.expensesTable = self.realm.objects(ExpenseDTO.self)
     }
