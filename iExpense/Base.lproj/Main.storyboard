@@ -110,9 +110,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="P0e-H8-xJG" secondAttribute="trailing" id="mvu-56-wcb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Accounts" image="account_icon" selectedImage="account_icon" id="XE5-hS-198">
-                        <inset key="imageInsets" minX="28" minY="28" maxX="28" maxY="28"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Accounts" image="account_icon" selectedImage="account_icon" id="XE5-hS-198"/>
                     <connections>
                         <outlet property="tableView" destination="P0e-H8-xJG" id="zSS-Cv-1Mh"/>
                     </connections>
@@ -494,9 +492,7 @@
                             <constraint firstItem="ncS-lJ-JFZ" firstAttribute="leading" secondItem="dba-gi-WHj" secondAttribute="leadingMargin" id="wIU-u8-RFY"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Expenses" image="value_icon" selectedImage="value_icon" id="kCk-hz-Lc1">
-                        <inset key="imageInsets" minX="22" minY="24" maxX="22" maxY="20"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Expenses" image="value_icon" selectedImage="value_icon" id="kCk-hz-Lc1"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="barIcon" destination="kCk-hz-Lc1" id="FpV-i3-UL1"/>
@@ -588,9 +584,7 @@
                             <constraint firstItem="xS1-aJ-yY5" firstAttribute="top" secondItem="0Q9-kz-LjR" secondAttribute="top" constant="20" id="v7v-sf-E8O"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Categories" image="category_icon" selectedImage="category_icon" id="o6a-Xr-fgs">
-                        <inset key="imageInsets" minX="27" minY="28" maxX="27" maxY="26"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Categories" image="category_icon" selectedImage="category_icon" id="o6a-Xr-fgs"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="barIcon" destination="o6a-Xr-fgs" id="HhA-w1-hJI"/>
@@ -694,8 +688,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="account_icon" width="128" height="128"/>
-        <image name="category_icon" width="128" height="128"/>
-        <image name="value_icon" width="128" height="128"/>
+        <image name="account_icon" width="48" height="48"/>
+        <image name="category_icon" width="48" height="48"/>
+        <image name="value_icon" width="48" height="48"/>
     </resources>
 </document>
