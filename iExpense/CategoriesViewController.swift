@@ -7,12 +7,15 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
     var categoriesTable : Results<CategoryDTO>?
     var realm : Realm!
     
+    @IBOutlet weak var barIcon: UITabBarItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         self.realm = try! Realm()
         self.categoriesTable = self.realm.objects(CategoryDTO.self)
+        self.barIcon.image = UIImage(named: "category_icon")
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,6 +42,19 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
         cell.CategoryImage.image = UIImage(named: "food_icon") //categoriesTable[indexPath.row].image
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            let filter = "name == '" + (self.categoriesTable?[indexPath.row].name)! + "'"
+            let categoryToDelete = realm.objects(CategoryDTO.self).filter(filter)
+            
+            try! realm.write {
+                realm.delete(categoryToDelete)
+            }
+            tableView.reloadData()
+        }
     }
     
 }

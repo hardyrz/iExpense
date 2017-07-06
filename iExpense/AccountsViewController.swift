@@ -40,6 +40,19 @@ class AccountsViewController: UIViewController, UITableViewDataSource, UITableVi
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            let filter = "name == '" + (self.accountsTable?[indexPath.row].name)! + "'"
+            let accountToDelete = realm.objects(AccountDTO.self).filter(filter)
+            
+            try! realm.write {
+                realm.delete(accountToDelete)
+            }
+            tableView.reloadData()
+        }
+    }
 
 }
 

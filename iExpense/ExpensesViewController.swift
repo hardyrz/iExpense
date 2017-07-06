@@ -7,6 +7,8 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
     var expensesTable : Results<ExpenseDTO>?
     var realm : Realm!
     
+    @IBOutlet weak var barIcon: UITabBarItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -14,6 +16,8 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
         Realm.Configuration.defaultConfiguration = config
         self.realm = try! Realm()
         self.expensesTable = self.realm.objects(ExpenseDTO.self)
+        
+        self.barIcon.image = UIImage(named: "value_icon")
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,8 +42,21 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
         
         cell.DescriptionLabel.text = self.expensesTable?[indexPath.row].desc
         cell.ValueLabel.text = "USD " + String(Int((self.expensesTable?[indexPath.row].value)!))
-        cell.CategoryImage.image = UIImage(named: "food_icon") //expensesTable[indexPath.row].category.image
+        cell.CategoryImage.image = UIImage(named: "food_icon")
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            let filter = "desc == '" + (self.expensesTable?[indexPath.row].desc)! + "'"
+            let expenseToDelete = realm.objects(ExpenseDTO.self).filter(filter)
+            
+            try! realm.write {
+                realm.delete(expenseToDelete)
+            }
+            tableView.reloadData()
+        }
     }
 }
