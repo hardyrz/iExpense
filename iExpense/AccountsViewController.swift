@@ -26,9 +26,6 @@ class AccountsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //if let table = self.expensesTable {
-        //    return table.count
-        //}
         return (self.accountsTable?.count)!
     }
     
@@ -36,7 +33,7 @@ class AccountsViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "accountCell", for: indexPath) as! AccountCell
         
         cell.accountLabel.text = self.accountsTable?[indexPath.row].name
-        cell.accountImage.image = UIImage(named: "food_icon") //accountsTable[indexPath.row].image
+        cell.accountImage.image = UIImage(named: "account_icon")
         
         return cell
     }

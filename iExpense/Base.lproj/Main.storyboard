@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Dashboard" id="yau-E8-a0v"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="dashboard_icon" selectedImage="dashboard_icon" id="yau-E8-a0v"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZiO-gv-bhk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -61,7 +61,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GtT-TN-w7d" id="Wbz-Rl-QIu">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Uw-VT-0eY">
@@ -434,17 +434,11 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="03s-69-ame" id="1Kh-OB-WqB">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zfv-UP-PM5">
-                                                    <rect key="frame" x="0.0" y="5" width="33" height="33.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="33" id="crc-CF-0Q5"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbP-xY-8lB">
-                                                    <rect key="frame" x="43" y="0.0" width="42" height="43.5"/>
+                                                    <rect key="frame" x="48" y="0.0" width="42" height="43.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -455,23 +449,32 @@
                                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTX-l6-MXD">
+                                                    <rect key="frame" x="5" y="5" width="33" height="33.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="33" id="Ph7-MH-LYv"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Zfv-UP-PM5" firstAttribute="top" secondItem="1Kh-OB-WqB" secondAttribute="top" constant="5" id="669-cf-Inr"/>
                                                 <constraint firstItem="DbP-xY-8lB" firstAttribute="top" secondItem="1Kh-OB-WqB" secondAttribute="top" id="6L7-6E-HVI"/>
                                                 <constraint firstItem="3fs-Jj-V2a" firstAttribute="top" secondItem="1Kh-OB-WqB" secondAttribute="top" id="6zL-8m-OPi"/>
+                                                <constraint firstAttribute="bottom" secondItem="xTX-l6-MXD" secondAttribute="bottom" constant="5" id="Bus-a9-5ZO"/>
                                                 <constraint firstAttribute="bottom" secondItem="3fs-Jj-V2a" secondAttribute="bottom" id="G7e-Ws-R2O"/>
-                                                <constraint firstItem="Zfv-UP-PM5" firstAttribute="leading" secondItem="1Kh-OB-WqB" secondAttribute="leading" id="Kcr-3g-X6V"/>
-                                                <constraint firstAttribute="bottom" secondItem="Zfv-UP-PM5" secondAttribute="bottom" constant="5" id="cq5-91-WRq"/>
                                                 <constraint firstAttribute="bottom" secondItem="DbP-xY-8lB" secondAttribute="bottom" id="h8X-Ws-1cq"/>
-                                                <constraint firstItem="DbP-xY-8lB" firstAttribute="leading" secondItem="Zfv-UP-PM5" secondAttribute="trailing" constant="10" id="iqg-5d-Hex"/>
+                                                <constraint firstItem="DbP-xY-8lB" firstAttribute="leading" secondItem="xTX-l6-MXD" secondAttribute="trailing" constant="10" id="jdy-wj-zxi"/>
+                                                <constraint firstItem="xTX-l6-MXD" firstAttribute="top" secondItem="1Kh-OB-WqB" secondAttribute="top" constant="5" id="nrw-4g-HWO"/>
+                                                <constraint firstItem="xTX-l6-MXD" firstAttribute="leading" secondItem="1Kh-OB-WqB" secondAttribute="leading" constant="5" id="wYb-73-GD8"/>
                                                 <constraint firstAttribute="trailing" secondItem="3fs-Jj-V2a" secondAttribute="trailing" constant="5" id="we3-Ec-bh8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="CategoryImage" destination="Zfv-UP-PM5" id="19j-pk-pts"/>
                                             <outlet property="DescriptionLabel" destination="DbP-xY-8lB" id="1Iv-pY-7wg"/>
                                             <outlet property="ValueLabel" destination="3fs-Jj-V2a" id="eLy-XG-mQv"/>
+                                            <outlet property="categoryLabel" destination="xTX-l6-MXD" id="3SM-Ql-RIZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -535,35 +538,38 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r2l-Gv-OJt" id="cPU-DV-k8s">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MhT-y3-sbo">
-                                                    <rect key="frame" x="0.0" y="5" width="33" height="33.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="33" id="ZcE-ty-ZWB"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axp-yH-Kh1">
                                                     <rect key="frame" x="43" y="8" width="292" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MgM-Dg-pTa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="33" height="43.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="33" id="tHp-Dc-Aza"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="axp-yH-Kh1" secondAttribute="trailing" id="KRc-P3-XXK"/>
-                                                <constraint firstAttribute="bottom" secondItem="MhT-y3-sbo" secondAttribute="bottom" constant="5" id="QG9-1C-aPw"/>
-                                                <constraint firstItem="MhT-y3-sbo" firstAttribute="top" secondItem="cPU-DV-k8s" secondAttribute="top" constant="5" id="cV2-wg-WTx"/>
-                                                <constraint firstItem="axp-yH-Kh1" firstAttribute="leading" secondItem="MhT-y3-sbo" secondAttribute="trailing" constant="10" id="nxq-Ir-SZc"/>
-                                                <constraint firstItem="MhT-y3-sbo" firstAttribute="leading" secondItem="cPU-DV-k8s" secondAttribute="leading" id="okp-EL-Mvw"/>
+                                                <constraint firstItem="MgM-Dg-pTa" firstAttribute="top" secondItem="cPU-DV-k8s" secondAttribute="top" id="XPQ-wO-Z0f"/>
+                                                <constraint firstItem="axp-yH-Kh1" firstAttribute="leading" secondItem="MgM-Dg-pTa" secondAttribute="trailing" constant="10" id="epC-O8-Taz"/>
+                                                <constraint firstAttribute="bottom" secondItem="MgM-Dg-pTa" secondAttribute="bottom" id="jC0-b9-83q"/>
                                                 <constraint firstItem="axp-yH-Kh1" firstAttribute="top" secondItem="cPU-DV-k8s" secondAttribute="topMargin" id="uDK-2D-43a"/>
+                                                <constraint firstItem="MgM-Dg-pTa" firstAttribute="leading" secondItem="cPU-DV-k8s" secondAttribute="leading" id="uFX-Sj-Dtz"/>
                                                 <constraint firstItem="axp-yH-Kh1" firstAttribute="bottom" secondItem="cPU-DV-k8s" secondAttribute="bottomMargin" id="wjf-NL-kJx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="CategoryImage" destination="MhT-y3-sbo" id="KTf-0D-Ht6"/>
                                             <outlet property="DescriptionLabel" destination="axp-yH-Kh1" id="Ghs-Rn-cjA"/>
+                                            <outlet property="categoryLabel" destination="MgM-Dg-pTa" id="5gz-Np-K3j"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -690,6 +696,7 @@
     <resources>
         <image name="account_icon" width="48" height="48"/>
         <image name="category_icon" width="48" height="48"/>
+        <image name="dashboard_icon" width="48" height="48"/>
         <image name="value_icon" width="48" height="48"/>
     </resources>
 </document>

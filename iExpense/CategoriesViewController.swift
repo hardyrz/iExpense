@@ -29,9 +29,6 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //if let table = self.expensesTable {
-        //    return table.count
-        //}
         return (self.categoriesTable?.count)!
     }
     
@@ -39,7 +36,10 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath) as! CategoryCell
         
         cell.DescriptionLabel.text = self.categoriesTable?[indexPath.row].name
-        cell.CategoryImage.image = UIImage(named: "food_icon") //categoriesTable[indexPath.row].image
+        let cat = self.categoriesTable?[indexPath.row].name
+        let letter = cat?.index((cat?.startIndex)!, offsetBy: 1)
+        
+        cell.categoryLabel.text = cat?.substring(to: letter!)
         
         return cell
     }

@@ -31,9 +31,6 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //if let table = self.expensesTable {
-        //    return table.count
-        //}
         return (self.expensesTable?.count)!
     }
     
@@ -42,7 +39,10 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
         
         cell.DescriptionLabel.text = self.expensesTable?[indexPath.row].desc
         cell.ValueLabel.text = "USD " + String(Int((self.expensesTable?[indexPath.row].value)!))
-        cell.CategoryImage.image = UIImage(named: "food_icon")
+        let cat = self.expensesTable?[indexPath.row].category?.name
+        let letter = cat?.index((cat?.startIndex)!, offsetBy: 1)
+        
+        cell.categoryLabel.text = cat?.substring(to: letter!)
         
         return cell
     }

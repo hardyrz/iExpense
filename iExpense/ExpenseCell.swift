@@ -4,7 +4,8 @@ class ExpenseCell: UITableViewCell {
     
     @IBOutlet weak var DescriptionLabel: UILabel!
     @IBOutlet weak var ValueLabel: UILabel!
-    @IBOutlet weak var CategoryImage: UIImageView!
+    @IBOutlet weak var categoryLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
