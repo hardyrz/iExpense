@@ -7,11 +7,15 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var descriptionImage: UIImageView!
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var accountImage: UIImageView!
+    @IBOutlet weak var dateImage: UIImageView!
+    
     
     @IBOutlet weak var valueInput: UITextField!
     @IBOutlet weak var descriptionInput: UITextField!
     @IBOutlet weak var categoryInput: UITextField!
     @IBOutlet weak var accountInput: UITextField!
+    @IBOutlet weak var dateInput: UITextField!
+    
     
     var realm : Realm!
     var categoriesList : Results<CategoryDTO>!
@@ -22,6 +26,8 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var accountPicker = UIPickerView()
     var selectedAccount : AccountDTO?
     
+    let datePicker = UIDatePicker()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -31,12 +37,10 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
         self.accountsList = realm.objects(AccountDTO.self)
         
         self.valueImage.image = UIImage(named: "value_icon")
-        
         self.descriptionImage.image = UIImage(named: "description_icon")
-        
         self.categoryImage.image = UIImage(named: "category_icon")
-        
         self.accountImage.image = UIImage(named: "account_icon")
+        self.dateImage.image = UIImage(named: "date_icon")
 
         categoryPicker.dataSource = self
         categoryPicker.delegate = self
@@ -45,6 +49,9 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
         accountPicker.dataSource = self
         accountPicker.delegate = self
         self.accountInput.inputView = accountPicker
+        
+        setCurrentDate()
+        createDatePicker()
     }
     
     @IBAction func cancelAction(_ sender: Any) {
@@ -97,5 +104,38 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
             self.selectedAccount = accountsList.elements[row]
         }
         self.view.endEditing(false)
+    }
+    
+    func createDatePicker() {
+        
+        datePicker.datePickerMode = .date
+        
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([doneButton] , animated: false)
+        
+        self.dateInput.inputAccessoryView = toolbar
+        self.dateInput.inputView = self.datePicker
+    }
+    
+    func donePressed() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        
+        self.dateInput.text = dateFormatter.string(from: self.datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+    func setCurrentDate() {
+        let date = Date()
+        let formatter = DateFormatter()
+        
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        
+        self.dateInput.text = formatter.string(from: date)
     }
 }
