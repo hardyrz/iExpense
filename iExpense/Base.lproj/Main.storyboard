@@ -21,9 +21,47 @@
                     <view key="view" contentMode="scaleToFill" id="qXr-5c-anD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Jgn-7W-6zQ">
+                                <rect key="frame" x="16" y="20" width="343" height="390"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Expenses by Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4b-em-K2d">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="7Cb-0y-PYa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U6z-8O-zic" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="0.0" y="90" width="343" height="300"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="Mx3-sf-txm"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="U6z-8O-zic" firstAttribute="leading" secondItem="Jgn-7W-6zQ" secondAttribute="leading" id="Lzd-jf-DfS"/>
+                                    <constraint firstAttribute="trailing" secondItem="U6z-8O-zic" secondAttribute="trailing" id="f5t-hF-dBU"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jgn-7W-6zQ" firstAttribute="leading" secondItem="qXr-5c-anD" secondAttribute="leadingMargin" id="Lbu-zm-xg6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jgn-7W-6zQ" secondAttribute="trailing" id="yCB-at-4ul"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Dashboard" image="dashboard_icon" selectedImage="dashboard_icon" id="yau-E8-a0v"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="dashboard_icon" selectedImage="dashboard_icon" id="yau-E8-a0v">
+                        <inset key="imageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="pieView" destination="U6z-8O-zic" id="tio-Af-NSg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZiO-gv-bhk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -61,7 +99,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GtT-TN-w7d" id="Wbz-Rl-QIu">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Uw-VT-0eY">
@@ -110,7 +148,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="P0e-H8-xJG" secondAttribute="trailing" id="mvu-56-wcb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Accounts" image="account_icon" selectedImage="account_icon" id="XE5-hS-198"/>
+                    <tabBarItem key="tabBarItem" title="Accounts" image="account_icon" selectedImage="account_icon" id="XE5-hS-198">
+                        <inset key="imageInsets" minX="6" minY="6" maxX="6" maxY="6"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="tableView" destination="P0e-H8-xJG" id="zSS-Cv-1Mh"/>
                     </connections>
@@ -434,7 +474,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="03s-69-ame" id="1Kh-OB-WqB">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbP-xY-8lB">
@@ -495,7 +535,9 @@
                             <constraint firstItem="ncS-lJ-JFZ" firstAttribute="leading" secondItem="dba-gi-WHj" secondAttribute="leadingMargin" id="wIU-u8-RFY"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Expenses" image="value_icon" selectedImage="value_icon" id="kCk-hz-Lc1"/>
+                    <tabBarItem key="tabBarItem" title="Expenses" image="value_icon" selectedImage="value_icon" id="kCk-hz-Lc1">
+                        <inset key="imageInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="barIcon" destination="kCk-hz-Lc1" id="FpV-i3-UL1"/>
@@ -538,7 +580,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r2l-Gv-OJt" id="cPU-DV-k8s">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axp-yH-Kh1">
@@ -590,7 +632,9 @@
                             <constraint firstItem="xS1-aJ-yY5" firstAttribute="top" secondItem="0Q9-kz-LjR" secondAttribute="top" constant="20" id="v7v-sf-E8O"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Categories" image="category_icon" selectedImage="category_icon" id="o6a-Xr-fgs"/>
+                    <tabBarItem key="tabBarItem" title="Categories" image="category_icon" selectedImage="category_icon" id="o6a-Xr-fgs">
+                        <inset key="imageInsets" minX="6" minY="6" maxX="6" maxY="6"/>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="barIcon" destination="o6a-Xr-fgs" id="HhA-w1-hJI"/>
