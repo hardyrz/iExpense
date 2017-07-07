@@ -18,6 +18,10 @@ class DashboardViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        updateChartWithData()
+    }
+    
     func updateChartWithData() {
         var dataEntries: [PieChartDataEntry] = []
         let categories = getCategories()
@@ -30,7 +34,7 @@ class DashboardViewController: UIViewController {
         
         let pieChartDataSet = PieChartDataSet(values: dataEntries, label: "Categories")
         pieChartDataSet.sliceSpace = 2
-        pieChartDataSet.colors = [UIColor.red, UIColor.gray, UIColor.blue, UIColor.green]
+        pieChartDataSet.colors = [UIColor.magenta, UIColor.orange, UIColor.black, UIColor.brown, UIColor.red, UIColor.blue, UIColor.green, UIColor.gray]
         
         self.pieView.data = PieChartData(dataSet: pieChartDataSet)
     }
