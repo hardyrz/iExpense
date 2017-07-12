@@ -5,6 +5,7 @@ import Charts
 class DashboardViewController: UIViewController {
     
     @IBOutlet weak var pieView: PieChartView!
+    @IBOutlet weak var barView: BarChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,7 @@ class DashboardViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         updateChartWithData()
+        updateBarChartWithData()
     }
     
     func updateChartWithData() {
@@ -37,6 +39,7 @@ class DashboardViewController: UIViewController {
         pieChartDataSet.colors = [UIColor.magenta, UIColor.orange, UIColor.black, UIColor.brown, UIColor.red, UIColor.blue, UIColor.green, UIColor.gray]
         
         self.pieView.data = PieChartData(dataSet: pieChartDataSet)
+        self.pieView.chartDescription?.text = "All time expenses"
     }
     
     func getExpenseCountsByCategory(category : CategoryDTO) -> Int {
@@ -59,6 +62,49 @@ class DashboardViewController: UIViewController {
         do {
             let realm = try Realm()
             return realm.objects(CategoryDTO.self)
+        } catch let error as NSError {
+            fatalError(error.localizedDescription)
+        }
+    }
+    
+    // Bar Chart
+    func updateBarChartWithData() {
+        var dataEntries: [BarChartDataEntry] = []
+        let expenses = getExpensesFromDatabase()
+        var months = [0,0,0,
+                      0,0,0,
+                      0,0,0,
+                      0,0,0]
+        var monthsStrings = ["Jan","Feb","Mar",
+                             "Apr","May","Jun",
+                             "Jul","Aug","Sep",
+                             "Oct","Nov","Dec"]
+        
+        let calendar = Calendar.current
+        
+        for i in 0..<expenses.count {
+            let month = calendar.component(.month, from: expenses[i].date!)
+            months[month] += expenses[i].value
+        }
+        
+        for j in 0..<months.count {
+            let dataEntry = BarChartDataEntry(x: Double(j), y: Double(months[j]))
+            dataEntries.append(dataEntry)
+        }
+        
+        
+        
+        let chartDataSet = BarChartDataSet(values: dataEntries, label: "2017")
+        let chartData = BarChartData(dataSet: chartDataSet)
+        barView.data = chartData
+        barView.noDataText = "You need to provide data for the chart."
+    }
+    
+    
+    func getExpensesFromDatabase() -> Results<ExpenseDTO> {
+        do {
+            let realm = try Realm()
+            return realm.objects(ExpenseDTO.self)
         } catch let error as NSError {
             fatalError(error.localizedDescription)
         }

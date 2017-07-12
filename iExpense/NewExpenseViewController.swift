@@ -65,6 +65,7 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
             myExpense.desc = self.descriptionInput.text!
             myExpense.category = self.selectedCategory
             myExpense.account = self.selectedAccount
+            myExpense.date = self.datePicker.date
             
             try! realm.write {
                 realm.add(myExpense)
