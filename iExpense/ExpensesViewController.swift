@@ -44,6 +44,10 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
         
         cell.categoryLabel.text = cat?.substring(to: letter!)
         
+        if (indexPath.row % 2 == 0) {
+            cell.backgroundColor = UIColor(displayP3Red: 0.9, green: 0.9, blue: 0.9, alpha: 0.4)
+        }
+        
         return cell
     }
     
