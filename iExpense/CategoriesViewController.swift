@@ -7,15 +7,13 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
     var categoriesTable : Results<CategoryDTO>?
     var realm : Realm!
     
-    @IBOutlet weak var barIcon: UITabBarItem!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         self.realm = try! Realm()
         self.categoriesTable = self.realm.objects(CategoryDTO.self)
-        self.barIcon.image = UIImage(named: "category_icon")
+        self.navigationController?.tabBarItem.image = UIImage(named: "category_icon")
     }
     
     override func didReceiveMemoryWarning() {

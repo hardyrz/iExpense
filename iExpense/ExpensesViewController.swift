@@ -7,8 +7,6 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
     var expensesTable : Results<ExpenseDTO>?
     var realm : Realm!
     
-    @IBOutlet weak var barIcon: UITabBarItem!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -17,7 +15,7 @@ class ExpensesViewController: UIViewController, UITableViewDataSource, UITableVi
         self.realm = try! Realm()
         self.expensesTable = self.realm.objects(ExpenseDTO.self)
         
-        self.barIcon.image = UIImage(named: "value_icon")
+        self.navigationController?.tabBarItem.image = UIImage(named: "value_icon")
     }
     
     override func didReceiveMemoryWarning() {

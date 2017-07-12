@@ -75,7 +75,7 @@ class DashboardViewController: UIViewController {
                       0,0,0,
                       0,0,0,
                       0,0,0]
-        var monthsStrings = ["Jan","Feb","Mar",
+        let monthsStrings = ["Jan","Feb","Mar",
                              "Apr","May","Jun",
                              "Jul","Aug","Sep",
                              "Oct","Nov","Dec"]
@@ -97,7 +97,10 @@ class DashboardViewController: UIViewController {
         let chartDataSet = BarChartDataSet(values: dataEntries, label: "2017")
         let chartData = BarChartData(dataSet: chartDataSet)
         barView.data = chartData
+        self.barView.chartDescription?.text = ""
         barView.noDataText = "You need to provide data for the chart."
+        
+        configureBarChart(monthsStrings: monthsStrings)
     }
     
     
@@ -108,5 +111,36 @@ class DashboardViewController: UIViewController {
         } catch let error as NSError {
             fatalError(error.localizedDescription)
         }
+    }
+    
+    func configureBarChart(monthsStrings: [String]) {
+        //legend
+        let legend = barView.legend
+        legend.enabled = true
+        legend.horizontalAlignment = .right
+        legend.verticalAlignment = .top
+        legend.orientation = .vertical
+        legend.drawInside = true
+        legend.yOffset = 10.0;
+        legend.xOffset = 10.0;
+        legend.yEntrySpace = 0.0;
+        
+        let xaxis = barView.xAxis
+        xaxis.drawGridLinesEnabled = true
+        xaxis.labelPosition = .bottom
+        xaxis.centerAxisLabelsEnabled = false
+        xaxis.valueFormatter = IndexAxisValueFormatter(values:monthsStrings)
+        xaxis.granularity = 1
+        
+        let leftAxisFormatter = NumberFormatter()
+        leftAxisFormatter.maximumFractionDigits = 1
+        
+        let yaxis = barView.leftAxis
+        yaxis.spaceTop = 0.35
+        yaxis.axisMinimum = 0
+        yaxis.drawGridLinesEnabled = false
+        
+        let raxis = barView.rightAxis
+        raxis.drawLabelsEnabled = false
     }
 }

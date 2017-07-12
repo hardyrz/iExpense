@@ -23,10 +23,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U6z-8O-zic" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="71" width="375" height="300"/>
+                                <rect key="frame" x="0.0" y="71" width="375" height="280"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="Mx3-sf-txm"/>
+                                    <constraint firstAttribute="height" constant="280" id="Mx3-sf-txm"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expenses by Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4b-em-K2d">
@@ -35,15 +35,32 @@
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NuH-wn-cOr" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="402" width="343" height="221"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expenses by month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntG-8y-awx">
+                                <rect key="frame" x="16" y="361" width="343" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="D4b-em-K2d" firstAttribute="trailing" secondItem="qXr-5c-anD" secondAttribute="trailingMargin" id="LOO-0d-pyK"/>
+                            <constraint firstItem="NuH-wn-cOr" firstAttribute="leading" secondItem="qXr-5c-anD" secondAttribute="leadingMargin" id="Lh3-4a-lJ0"/>
                             <constraint firstItem="D4b-em-K2d" firstAttribute="leading" secondItem="qXr-5c-anD" secondAttribute="leadingMargin" id="Q6w-Te-zIu"/>
+                            <constraint firstItem="ntG-8y-awx" firstAttribute="leading" secondItem="qXr-5c-anD" secondAttribute="leadingMargin" id="R8i-fK-jxn"/>
+                            <constraint firstItem="ntG-8y-awx" firstAttribute="top" secondItem="U6z-8O-zic" secondAttribute="bottom" constant="10" id="Wxi-tn-9PM"/>
                             <constraint firstItem="U6z-8O-zic" firstAttribute="leading" secondItem="qXr-5c-anD" secondAttribute="leading" id="XJI-Wl-tAj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NuH-wn-cOr" secondAttribute="trailing" id="YzP-1S-6hq"/>
+                            <constraint firstItem="NuH-wn-cOr" firstAttribute="top" secondItem="ntG-8y-awx" secondAttribute="bottom" id="dym-Zz-ZZI"/>
                             <constraint firstItem="U6z-8O-zic" firstAttribute="top" secondItem="D4b-em-K2d" secondAttribute="bottom" id="ssO-95-Utd"/>
+                            <constraint firstItem="biH-ir-wpB" firstAttribute="top" secondItem="NuH-wn-cOr" secondAttribute="bottom" id="vH5-xl-ggN"/>
                             <constraint firstItem="D4b-em-K2d" firstAttribute="top" secondItem="CyK-3b-idO" secondAttribute="bottom" constant="10" id="vzb-VQ-QFV"/>
                             <constraint firstAttribute="trailing" secondItem="U6z-8O-zic" secondAttribute="trailing" id="xze-Zx-KKw"/>
+                            <constraint firstItem="ntG-8y-awx" firstAttribute="trailing" secondItem="qXr-5c-anD" secondAttribute="trailingMargin" id="yvf-J9-Wno"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Dashboard" image="dashboard_icon" selectedImage="dashboard_icon" id="yau-E8-a0v">
@@ -52,17 +69,18 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="barView" destination="NuH-wn-cOr" id="pO7-o1-bkJ"/>
                         <outlet property="pieView" destination="U6z-8O-zic" id="tio-Af-NSg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZiO-gv-bhk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="193" y="-144"/>
+            <point key="canvasLocation" x="1194" y="-269"/>
         </scene>
         <!--Accounts-->
         <scene sceneID="KU1-0n-eNJ">
             <objects>
-                <viewController title="Accounts" id="ypM-7p-kKR" customClass="AccountsViewController" customModule="iExpense" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Accounts" automaticallyAdjustsScrollViewInsets="NO" id="ypM-7p-kKR" customClass="AccountsViewController" customModule="iExpense" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BNC-Sy-HJb"/>
                         <viewControllerLayoutGuide type="bottom" id="azO-KR-yEQ"/>
@@ -71,20 +89,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAz-JJ-nZM">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Accounts" id="pB5-FM-uNN">
-                                        <barButtonItem key="rightBarButtonItem" title="Add" id="4aw-ci-noV">
-                                            <connections>
-                                                <segue destination="cGz-es-by5" kind="show" id="mU4-fT-1cD"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P0e-H8-xJG">
-                                <rect key="frame" x="16" y="74" width="343" height="544"/>
+                                <rect key="frame" x="16" y="64" width="343" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="accountCell" id="GtT-TN-w7d" customClass="AccountCell" customModule="iExpense" customModuleProvider="target">
@@ -95,13 +101,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Uw-VT-0eY">
-                                                    <rect key="frame" x="0.0" y="5" width="33" height="33.5"/>
+                                                    <rect key="frame" x="0.0" y="5" width="33" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="33" id="Oqd-PU-JT5"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAf-MF-69I">
-                                                    <rect key="frame" x="43" y="0.0" width="300" height="43.5"/>
+                                                    <rect key="frame" x="43" y="0.0" width="300" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -131,25 +137,26 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XAz-JJ-nZM" firstAttribute="top" secondItem="vna-6x-u1T" secondAttribute="top" constant="20" id="2fb-zr-IYJ"/>
                             <constraint firstItem="azO-KR-yEQ" firstAttribute="top" secondItem="P0e-H8-xJG" secondAttribute="bottom" id="8kq-nE-h4Y"/>
-                            <constraint firstItem="XAz-JJ-nZM" firstAttribute="leading" secondItem="vna-6x-u1T" secondAttribute="leading" id="USr-Gb-OHn"/>
+                            <constraint firstItem="P0e-H8-xJG" firstAttribute="top" secondItem="BNC-Sy-HJb" secondAttribute="bottom" id="WZu-K6-BlG"/>
                             <constraint firstItem="P0e-H8-xJG" firstAttribute="leading" secondItem="vna-6x-u1T" secondAttribute="leadingMargin" id="Xzy-fm-ewD"/>
-                            <constraint firstAttribute="trailing" secondItem="XAz-JJ-nZM" secondAttribute="trailing" id="amj-Ak-TND"/>
-                            <constraint firstItem="P0e-H8-xJG" firstAttribute="top" secondItem="XAz-JJ-nZM" secondAttribute="bottom" constant="10" id="jzp-dy-bfR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="P0e-H8-xJG" secondAttribute="trailing" id="mvu-56-wcb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Accounts" image="account_icon" selectedImage="account_icon" id="XE5-hS-198">
-                        <inset key="imageInsets" minX="6" minY="6" maxX="6" maxY="6"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="Accounts" id="pB5-FM-uNN">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="4aw-ci-noV">
+                            <connections>
+                                <segue destination="cGz-es-by5" kind="show" id="mU4-fT-1cD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="P0e-H8-xJG" id="zSS-Cv-1Mh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rff-kS-n5P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-450" y="510"/>
+            <point key="canvasLocation" x="-39" y="1272"/>
         </scene>
         <!--New Account View Controller-->
         <scene sceneID="SAX-ew-pXY">
@@ -238,7 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wHx-tp-3hq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-39" y="1272"/>
+            <point key="canvasLocation" x="-39" y="2063"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vkg-eA-gnQ">
@@ -250,9 +257,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BaN-qj-dc0" kind="relationship" relationship="viewControllers" id="XJD-JC-Mgb"/>
-                        <segue destination="ZyJ-Bp-06B" kind="relationship" relationship="viewControllers" id="Qv4-NC-Zuk"/>
-                        <segue destination="ypM-7p-kKR" kind="relationship" relationship="viewControllers" id="rZb-gI-0O7"/>
+                        <segue destination="Kq0-DU-azY" kind="relationship" relationship="viewControllers" id="XJD-JC-Mgb"/>
+                        <segue destination="zWZ-N5-6lL" kind="relationship" relationship="viewControllers" id="Qv4-NC-Zuk"/>
+                        <segue destination="2PO-6e-bVa" kind="relationship" relationship="viewControllers" id="rZb-gI-0O7"/>
                         <segue destination="RPe-eM-eJM" kind="relationship" relationship="viewControllers" id="oM0-MB-glc"/>
                     </connections>
                 </tabBarController>
@@ -455,12 +462,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eoL-Km-bjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2722.4000000000001" y="447.52623688155927"/>
+            <point key="canvasLocation" x="-2348" y="1272"/>
         </scene>
         <!--Expenses-->
         <scene sceneID="vuH-UG-xRc">
             <objects>
-                <viewController title="Expenses" id="BaN-qj-dc0" customClass="ExpensesViewController" customModule="iExpense" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Expenses" automaticallyAdjustsScrollViewInsets="NO" id="BaN-qj-dc0" customClass="ExpensesViewController" customModule="iExpense" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0O7-oA-GCe"/>
                         <viewControllerLayoutGuide type="bottom" id="bqi-nH-Nwa"/>
@@ -469,20 +476,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csJ-3W-OF9">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Expenses" id="Qn1-VB-rbB">
-                                        <barButtonItem key="rightBarButtonItem" title="Add" id="yCF-Hw-dMV">
-                                            <connections>
-                                                <segue destination="nsf-tZ-rMD" kind="show" id="U3W-I5-QGL"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ncS-lJ-JFZ">
-                                <rect key="frame" x="16" y="74" width="343" height="544"/>
+                                <rect key="frame" x="16" y="64" width="343" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="expenseCell" id="03s-69-ame" customClass="ExpenseCell" customModule="iExpense" customModuleProvider="target">
@@ -493,19 +488,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbP-xY-8lB">
-                                                    <rect key="frame" x="48" y="0.0" width="42" height="43.5"/>
+                                                    <rect key="frame" x="48" y="0.0" width="42" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fs-Jj-V2a">
-                                                    <rect key="frame" x="293.5" y="0.0" width="44.5" height="44"/>
+                                                    <rect key="frame" x="293" y="0.0" width="45" height="44"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTX-l6-MXD">
-                                                    <rect key="frame" x="5" y="5" width="33" height="33.5"/>
+                                                    <rect key="frame" x="5" y="5" width="33" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="33" id="Ph7-MH-LYv"/>
                                                     </constraints>
@@ -541,18 +536,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="csJ-3W-OF9" firstAttribute="top" secondItem="dba-gi-WHj" secondAttribute="top" constant="20" id="Ebq-fF-Nog"/>
-                            <constraint firstItem="ncS-lJ-JFZ" firstAttribute="top" secondItem="csJ-3W-OF9" secondAttribute="bottom" constant="10" id="KUv-hE-rXJ"/>
+                            <constraint firstItem="ncS-lJ-JFZ" firstAttribute="top" secondItem="0O7-oA-GCe" secondAttribute="bottom" id="QDN-ji-bHF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ncS-lJ-JFZ" secondAttribute="trailing" id="TjO-Xt-6Xa"/>
-                            <constraint firstAttribute="trailing" secondItem="csJ-3W-OF9" secondAttribute="trailing" id="W4C-yk-TZ2"/>
                             <constraint firstItem="bqi-nH-Nwa" firstAttribute="top" secondItem="ncS-lJ-JFZ" secondAttribute="bottom" id="jy6-5T-dvu"/>
-                            <constraint firstItem="csJ-3W-OF9" firstAttribute="leading" secondItem="dba-gi-WHj" secondAttribute="leading" id="q2H-Ix-WAd"/>
                             <constraint firstItem="ncS-lJ-JFZ" firstAttribute="leading" secondItem="dba-gi-WHj" secondAttribute="leadingMargin" id="wIU-u8-RFY"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Expenses" image="value_icon" selectedImage="value_icon" id="kCk-hz-Lc1">
-                        <inset key="imageInsets" minX="2" minY="2" maxX="2" maxY="2"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="Expenses" id="Qn1-VB-rbB">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="yCF-Hw-dMV">
+                            <connections>
+                                <segue destination="nsf-tZ-rMD" kind="show" id="U3W-I5-QGL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="barIcon" destination="kCk-hz-Lc1" id="FpV-i3-UL1"/>
@@ -561,12 +557,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XEL-Fb-40o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1743.2" y="-144.3778110944528"/>
+            <point key="canvasLocation" x="-2348" y="510"/>
         </scene>
         <!--Categories-->
         <scene sceneID="JVP-4t-u4w">
             <objects>
-                <viewController title="Categories" id="ZyJ-Bp-06B" customClass="CategoriesViewController" customModule="iExpense" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Categories" automaticallyAdjustsScrollViewInsets="NO" id="ZyJ-Bp-06B" customClass="CategoriesViewController" customModule="iExpense" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9af-w8-sLS"/>
                         <viewControllerLayoutGuide type="bottom" id="eq4-qx-umu"/>
@@ -575,20 +571,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xS1-aJ-yY5">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Categories" id="v9Y-9F-pLk">
-                                        <barButtonItem key="rightBarButtonItem" title="Add" id="3C8-bf-ttn">
-                                            <connections>
-                                                <segue destination="0gl-bf-g6n" kind="show" id="j54-Ua-kYW"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YgR-bC-V2K">
-                                <rect key="frame" x="16" y="74" width="343" height="544"/>
+                                <rect key="frame" x="16" y="64" width="343" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="categoryCell" id="r2l-Gv-OJt" customClass="CategoryCell" customModule="iExpense" customModuleProvider="target">
@@ -640,16 +624,17 @@
                         <constraints>
                             <constraint firstItem="YgR-bC-V2K" firstAttribute="leading" secondItem="0Q9-kz-LjR" secondAttribute="leadingMargin" id="BTV-yv-ryb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YgR-bC-V2K" secondAttribute="trailing" id="Idn-tj-lub"/>
-                            <constraint firstItem="xS1-aJ-yY5" firstAttribute="leading" secondItem="0Q9-kz-LjR" secondAttribute="leading" id="LAN-mE-nc1"/>
                             <constraint firstItem="eq4-qx-umu" firstAttribute="top" secondItem="YgR-bC-V2K" secondAttribute="bottom" id="ZVd-uR-hm6"/>
-                            <constraint firstAttribute="trailing" secondItem="xS1-aJ-yY5" secondAttribute="trailing" id="Zda-jT-KjB"/>
-                            <constraint firstItem="YgR-bC-V2K" firstAttribute="top" secondItem="xS1-aJ-yY5" secondAttribute="bottom" constant="10" id="b1m-cs-Xv0"/>
-                            <constraint firstItem="xS1-aJ-yY5" firstAttribute="top" secondItem="0Q9-kz-LjR" secondAttribute="top" constant="20" id="v7v-sf-E8O"/>
+                            <constraint firstItem="YgR-bC-V2K" firstAttribute="top" secondItem="9af-w8-sLS" secondAttribute="bottom" id="pHt-1C-Kh1"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Categories" image="category_icon" selectedImage="category_icon" id="o6a-Xr-fgs">
-                        <inset key="imageInsets" minX="6" minY="6" maxX="6" maxY="6"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="Categories" id="v9Y-9F-pLk">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="3C8-bf-ttn">
+                            <connections>
+                                <segue destination="0gl-bf-g6n" kind="show" id="j54-Ua-kYW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="barIcon" destination="o6a-Xr-fgs" id="HhA-w1-hJI"/>
@@ -658,7 +643,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="auA-rA-DZM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1140" y="510"/>
+            <point key="canvasLocation" x="-1140" y="1272"/>
         </scene>
         <!--New Category View Controller-->
         <scene sceneID="Ml5-wj-jr0">
@@ -749,7 +734,70 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zhg-Ie-KI7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1444" y="1272"/>
+            <point key="canvasLocation" x="-1140" y="2064"/>
+        </scene>
+        <!--Categories-->
+        <scene sceneID="Wey-IV-T5E">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zWZ-N5-6lL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Categories" image="category_icon" selectedImage="category_icon" id="o6a-Xr-fgs">
+                        <inset key="imageInsets" minX="6" minY="6" maxX="6" maxY="6"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RhQ-bS-ahd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZyJ-Bp-06B" kind="relationship" relationship="rootViewController" id="lgo-yF-VOj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ACE-Ld-Yq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1140" y="509.59520239880067"/>
+        </scene>
+        <!--Accounts-->
+        <scene sceneID="YF1-Zc-1gW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2PO-6e-bVa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Accounts" image="account_icon" selectedImage="account_icon" id="XE5-hS-198">
+                        <inset key="imageInsets" minX="6" minY="6" maxX="6" maxY="6"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3YY-eN-zlV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ypM-7p-kKR" kind="relationship" relationship="rootViewController" id="ecm-ot-UaQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yUZ-G8-DE5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-39" y="510"/>
+        </scene>
+        <!--Expenses-->
+        <scene sceneID="ooP-LZ-MO7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kq0-DU-azY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Expenses" image="value_icon" selectedImage="value_icon" id="kCk-hz-Lc1">
+                        <inset key="imageInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="69V-E4-0Fo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BaN-qj-dc0" kind="relationship" relationship="rootViewController" id="9pN-iu-0Cn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t1F-3J-ZzD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2348" y="-269"/>
         </scene>
     </scenes>
     <resources>
