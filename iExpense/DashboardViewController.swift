@@ -84,7 +84,7 @@ class DashboardViewController: UIViewController {
         
         for i in 0..<expenses.count {
             let month = calendar.component(.month, from: expenses[i].date!)
-            months[month] += expenses[i].value
+            months[month-1] += expenses[i].value
         }
         
         for j in 0..<months.count {

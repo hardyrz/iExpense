@@ -25,11 +25,7 @@ class NewCategoryViewController: UIViewController {
                 realm.add(myCategory)
             }
             
-            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         }
-    }
-    
-    @IBAction func cancelAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
     }
 }

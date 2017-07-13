@@ -23,24 +23,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U6z-8O-zic" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="71" width="375" height="280"/>
+                                <rect key="frame" x="0.0" y="115" width="375" height="280"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="280" id="Mx3-sf-txm"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expenses by Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4b-em-K2d">
-                                <rect key="frame" x="16" y="30" width="343" height="41"/>
+                                <rect key="frame" x="16" y="74" width="343" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NuH-wn-cOr" customClass="BarChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="402" width="343" height="221"/>
+                                <rect key="frame" x="16" y="446" width="343" height="177"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expenses by month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntG-8y-awx">
-                                <rect key="frame" x="16" y="361" width="343" height="41"/>
+                                <rect key="frame" x="16" y="405" width="343" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -63,10 +63,8 @@
                             <constraint firstItem="ntG-8y-awx" firstAttribute="trailing" secondItem="qXr-5c-anD" secondAttribute="trailingMargin" id="yvf-J9-Wno"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Dashboard" image="dashboard_icon" selectedImage="dashboard_icon" id="yau-E8-a0v">
-                        <inset key="imageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                    </tabBarItem>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Dashboard" id="AcO-4w-IJF"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="barView" destination="NuH-wn-cOr" id="pO7-o1-bkJ"/>
@@ -75,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZiO-gv-bhk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1194" y="-269"/>
+            <point key="canvasLocation" x="1193" y="510"/>
         </scene>
         <!--Accounts-->
         <scene sceneID="KU1-0n-eNJ">
@@ -145,6 +143,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Accounts" id="pB5-FM-uNN">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="4aw-ci-noV">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="cGz-es-by5" kind="show" id="mU4-fT-1cD"/>
                             </connections>
@@ -170,23 +169,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nvV-ib-tdK">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem id="I6b-l9-UsX">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Qf4-0R-0hO">
-                                            <connections>
-                                                <action selector="cancelAction:" destination="cGz-es-by5" id="vpi-53-kdm"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Save" id="nfv-dO-pKt">
-                                            <connections>
-                                                <action selector="saveAction:" destination="cGz-es-by5" id="AdY-7w-ldb"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJh-q8-qeq">
                                 <rect key="frame" x="0.0" y="84" width="375" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
@@ -227,17 +209,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="nvV-ib-tdK" secondAttribute="trailing" id="1zC-gP-dGM"/>
                             <constraint firstAttribute="trailing" secondItem="cJh-q8-qeq" secondAttribute="trailing" id="560-q1-186"/>
-                            <constraint firstItem="nvV-ib-tdK" firstAttribute="leading" secondItem="ACq-ja-bp7" secondAttribute="leading" id="C9H-SU-LSr"/>
                             <constraint firstItem="ikW-GG-2D5" firstAttribute="top" secondItem="cJh-q8-qeq" secondAttribute="bottom" constant="40" id="EmW-HO-fIW"/>
                             <constraint firstItem="ikW-GG-2D5" firstAttribute="leading" secondItem="ACq-ja-bp7" secondAttribute="leadingMargin" id="U6C-v5-e4j"/>
                             <constraint firstItem="cJh-q8-qeq" firstAttribute="leading" secondItem="ACq-ja-bp7" secondAttribute="leading" id="Zac-5H-5hG"/>
-                            <constraint firstItem="cJh-q8-qeq" firstAttribute="top" secondItem="nvV-ib-tdK" secondAttribute="bottom" constant="20" id="bhk-nK-xnj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ikW-GG-2D5" secondAttribute="trailing" id="ha9-ZL-hwv"/>
-                            <constraint firstItem="nvV-ib-tdK" firstAttribute="top" secondItem="ACq-ja-bp7" secondAttribute="top" constant="20" id="lFf-dE-ORY"/>
+                            <constraint firstItem="cJh-q8-qeq" firstAttribute="top" secondItem="a0X-5R-bz3" secondAttribute="bottom" constant="20" id="nof-zw-i87"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="I6b-l9-UsX">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="nfv-dO-pKt">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="saveAction:" destination="cGz-es-by5" id="AdY-7w-ldb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="nameImage" destination="KZB-5c-wbz" id="Z9O-0K-jjS"/>
                         <outlet property="nameInput" destination="coS-M6-kIT" id="w6L-I1-aZN"/>
@@ -260,7 +247,7 @@
                         <segue destination="Kq0-DU-azY" kind="relationship" relationship="viewControllers" id="XJD-JC-Mgb"/>
                         <segue destination="zWZ-N5-6lL" kind="relationship" relationship="viewControllers" id="Qv4-NC-Zuk"/>
                         <segue destination="2PO-6e-bVa" kind="relationship" relationship="viewControllers" id="rZb-gI-0O7"/>
-                        <segue destination="RPe-eM-eJM" kind="relationship" relationship="viewControllers" id="oM0-MB-glc"/>
+                        <segue destination="172-XX-ABB" kind="relationship" relationship="viewControllers" id="oM0-MB-glc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afo-wf-N3v" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -279,23 +266,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5O4-pS-4wD">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem id="Hr4-1Y-mWu">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="9Yr-o1-mht">
-                                            <connections>
-                                                <action selector="cancelAction:" destination="nsf-tZ-rMD" id="121-EI-OEI"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Save" id="rvg-TQ-aVG">
-                                            <connections>
-                                                <action selector="saveAction:" destination="nsf-tZ-rMD" id="wSm-HN-oqg"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L3x-xI-oov">
                                 <rect key="frame" x="16" y="84" width="343" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
@@ -436,17 +406,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="L3x-xI-oov" secondAttribute="trailing" id="0RO-ST-124"/>
-                            <constraint firstItem="5O4-pS-4wD" firstAttribute="top" secondItem="Rdu-Gv-gl1" secondAttribute="top" constant="20" id="AwN-om-NT7"/>
-                            <constraint firstItem="L3x-xI-oov" firstAttribute="top" secondItem="5O4-pS-4wD" secondAttribute="bottom" constant="20" id="BWj-V0-4X2"/>
                             <constraint firstItem="L3x-xI-oov" firstAttribute="leading" secondItem="Rdu-Gv-gl1" secondAttribute="leadingMargin" id="Bbi-Xl-cHt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kp9-Zf-n5f" secondAttribute="trailing" constant="10" id="MAZ-Il-75H"/>
-                            <constraint firstAttribute="trailing" secondItem="5O4-pS-4wD" secondAttribute="trailing" id="Pef-08-7Cu"/>
                             <constraint firstItem="kp9-Zf-n5f" firstAttribute="leading" secondItem="Rdu-Gv-gl1" secondAttribute="leadingMargin" constant="10" id="Vma-Q5-F0P"/>
                             <constraint firstItem="kp9-Zf-n5f" firstAttribute="top" secondItem="L3x-xI-oov" secondAttribute="bottom" constant="40" id="b9Z-ei-jsw"/>
-                            <constraint firstItem="5O4-pS-4wD" firstAttribute="leading" secondItem="Rdu-Gv-gl1" secondAttribute="leading" id="rd4-wN-MBl"/>
+                            <constraint firstItem="L3x-xI-oov" firstAttribute="top" secondItem="9Gw-xU-UVJ" secondAttribute="bottom" constant="20" id="hIO-p8-SBt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="drI-8e-6Ow"/>
+                    <navigationItem key="navigationItem" id="Hr4-1Y-mWu">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="rvg-TQ-aVG">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="saveAction:" destination="nsf-tZ-rMD" id="wSm-HN-oqg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="accountImage" destination="t5I-O0-fV1" id="0MC-8f-aAy"/>
                         <outlet property="accountInput" destination="NDY-gc-N57" id="FDm-Ed-eHQ"/>
@@ -544,6 +518,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Expenses" id="Qn1-VB-rbB">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="yCF-Hw-dMV">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="nsf-tZ-rMD" kind="show" id="U3W-I5-QGL"/>
                             </connections>
@@ -630,6 +605,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Categories" id="v9Y-9F-pLk">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="3C8-bf-ttn">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="0gl-bf-g6n" kind="show" id="j54-Ua-kYW"/>
                             </connections>
@@ -657,23 +633,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7G-KT-PWs">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem id="RAe-C2-u7D">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="QtH-tu-Gx0">
-                                            <connections>
-                                                <action selector="cancelAction:" destination="0gl-bf-g6n" id="yPx-d5-d37"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Save" id="cFD-ED-V3r">
-                                            <connections>
-                                                <action selector="saveAction:" destination="0gl-bf-g6n" id="45R-XN-Cgi"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MK-gS-cqQ">
                                 <rect key="frame" x="0.0" y="84" width="375" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
@@ -717,16 +676,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="7MK-gS-cqQ" secondAttribute="trailing" id="Afc-IO-NE0"/>
-                            <constraint firstItem="g7G-KT-PWs" firstAttribute="leading" secondItem="Qlt-Lo-tk9" secondAttribute="leading" id="E0C-l4-nqK"/>
                             <constraint firstItem="WjY-jW-mR0" firstAttribute="top" secondItem="7MK-gS-cqQ" secondAttribute="bottom" constant="40" id="Qag-7m-NgO"/>
-                            <constraint firstItem="g7G-KT-PWs" firstAttribute="top" secondItem="Qlt-Lo-tk9" secondAttribute="top" constant="20" id="StK-FX-Iza"/>
                             <constraint firstItem="WjY-jW-mR0" firstAttribute="leading" secondItem="Qlt-Lo-tk9" secondAttribute="leadingMargin" id="XzX-zL-GwZ"/>
-                            <constraint firstAttribute="trailing" secondItem="g7G-KT-PWs" secondAttribute="trailing" id="ZHr-DY-9dg"/>
+                            <constraint firstItem="7MK-gS-cqQ" firstAttribute="top" secondItem="9VH-iK-Svn" secondAttribute="bottom" constant="20" id="ZnC-gr-Rnk"/>
                             <constraint firstItem="7MK-gS-cqQ" firstAttribute="leading" secondItem="Qlt-Lo-tk9" secondAttribute="leading" id="duv-Jo-rdL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WjY-jW-mR0" secondAttribute="trailing" id="lNq-mT-YqM"/>
-                            <constraint firstItem="7MK-gS-cqQ" firstAttribute="top" secondItem="g7G-KT-PWs" secondAttribute="bottom" constant="20" id="vsB-p9-ewn"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="RAe-C2-u7D">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="cFD-ED-V3r">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="saveAction:" destination="0gl-bf-g6n" id="45R-XN-Cgi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="nameImage" destination="rDj-8j-6dV" id="vBE-yf-wta"/>
                         <outlet property="nameInput" destination="0i7-Lr-sEX" id="Y5i-P0-8E1"/>
@@ -744,9 +708,10 @@
                         <inset key="imageInsets" minX="6" minY="6" maxX="6" maxY="6"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RhQ-bS-ahd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RhQ-bS-ahd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.4941176471" blue="0.0" alpha="0.69558189660000003" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -765,9 +730,10 @@
                         <inset key="imageInsets" minX="6" minY="6" maxX="6" maxY="6"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3YY-eN-zlV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3YY-eN-zlV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.4941176471" blue="0.0" alpha="0.69558189660000003" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -786,9 +752,10 @@
                         <inset key="imageInsets" minX="2" minY="2" maxX="2" maxY="2"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="69V-E4-0Fo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="69V-E4-0Fo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.49411764705882355" blue="0.0" alpha="0.69558189655172409" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -798,6 +765,28 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1F-3J-ZzD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2348" y="-269"/>
+        </scene>
+        <!--Dashboard-->
+        <scene sceneID="HeZ-2H-pGv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="172-XX-ABB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="dashboard_icon" selectedImage="dashboard_icon" id="yau-E8-a0v">
+                        <inset key="imageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eRm-5l-i96">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.4941176471" blue="0.0" alpha="0.69558189660000003" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RPe-eM-eJM" kind="relationship" relationship="rootViewController" id="b9L-pM-Br7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ux9-1I-7TU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1192.8" y="-269.41529235382313"/>
         </scene>
     </scenes>
     <resources>

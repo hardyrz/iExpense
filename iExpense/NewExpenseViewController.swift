@@ -54,10 +54,6 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
         createDatePicker()
     }
     
-    @IBAction func cancelAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     @IBAction func saveAction(_ sender: Any) {
         if (Int(self.valueInput.text!) != nil && self.selectedCategory != nil) {
             let myExpense = ExpenseDTO()
@@ -71,7 +67,7 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
                 realm.add(myExpense)
             }
         
-            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
