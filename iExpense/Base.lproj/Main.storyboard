@@ -711,6 +711,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RhQ-bS-ahd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="1" green="0.4941176471" blue="0.0" alpha="0.69558189660000003" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -733,6 +734,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3YY-eN-zlV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="1" green="0.4941176471" blue="0.0" alpha="0.69558189660000003" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -755,6 +757,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="69V-E4-0Fo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="1" green="0.49411764705882355" blue="0.0" alpha="0.69558189655172409" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
