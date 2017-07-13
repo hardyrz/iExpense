@@ -25,7 +25,7 @@ class NewCategoryViewController: UIViewController {
                 realm.add(myCategory)
             }
             
-            self.navigationController?.popViewController(animated: true)
+            _ = self.navigationController?.popViewController(animated: true)
         }
     }
 }

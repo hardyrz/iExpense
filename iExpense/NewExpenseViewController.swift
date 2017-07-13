@@ -67,7 +67,7 @@ class NewExpenseViewController: UIViewController, UIPickerViewDelegate, UIPicker
                 realm.add(myExpense)
             }
         
-            self.navigationController?.popViewController(animated: true)
+            _ = self.navigationController?.popViewController(animated: true)
         }
     }
     

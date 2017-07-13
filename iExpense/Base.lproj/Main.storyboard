@@ -39,7 +39,7 @@
                                 <rect key="frame" x="16" y="446" width="343" height="177"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expenses by month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntG-8y-awx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expenses by Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntG-8y-awx">
                                 <rect key="frame" x="16" y="405" width="343" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -704,9 +704,7 @@
         <scene sceneID="Wey-IV-T5E">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zWZ-N5-6lL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Categories" image="category_icon" selectedImage="category_icon" id="o6a-Xr-fgs">
-                        <inset key="imageInsets" minX="6" minY="6" maxX="6" maxY="6"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Categories" image="category_icon" selectedImage="category_icon" id="o6a-Xr-fgs"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RhQ-bS-ahd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -727,9 +725,7 @@
         <scene sceneID="YF1-Zc-1gW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2PO-6e-bVa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Accounts" image="account_icon" selectedImage="account_icon" id="XE5-hS-198">
-                        <inset key="imageInsets" minX="6" minY="6" maxX="6" maxY="6"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Accounts" image="account_icon" selectedImage="account_icon" id="XE5-hS-198"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3YY-eN-zlV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -750,9 +746,7 @@
         <scene sceneID="ooP-LZ-MO7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kq0-DU-azY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Expenses" image="value_icon" selectedImage="value_icon" id="kCk-hz-Lc1">
-                        <inset key="imageInsets" minX="2" minY="2" maxX="2" maxY="2"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Expenses" image="value_icon" selectedImage="value_icon" id="kCk-hz-Lc1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="69V-E4-0Fo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -773,9 +767,7 @@
         <scene sceneID="HeZ-2H-pGv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="172-XX-ABB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Dashboard" image="dashboard_icon" selectedImage="dashboard_icon" id="yau-E8-a0v">
-                        <inset key="imageInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="dashboard_icon" selectedImage="dashboard_icon" id="yau-E8-a0v"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="eRm-5l-i96">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -793,9 +785,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="account_icon" width="48" height="48"/>
-        <image name="category_icon" width="48" height="48"/>
-        <image name="dashboard_icon" width="48" height="48"/>
-        <image name="value_icon" width="48" height="48"/>
+        <image name="account_icon" width="30" height="30"/>
+        <image name="category_icon" width="30" height="30"/>
+        <image name="dashboard_icon" width="30" height="30"/>
+        <image name="value_icon" width="30" height="30"/>
     </resources>
 </document>
